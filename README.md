@@ -39,4 +39,12 @@ Likewise, we the following script can be used to run tests with a synthetic late
 
     $ sudo ./mlp_vs_all.sh <use_cache_part>  # 1 for partitioning, 0 for no partitioning
 
-Once completed, the figures showing the victim slowdown and LLC missrate results can be found in the figs directory.
+Once completed, the figures showing the victim slowdown and LLC missrate results can be found in the figs directory. For the slowdown figures, the y-axis range can be changed to better display the results for some platforms (e.g. Tiger Lake UP3). This can be done by changing the min and max values in the following line from the corresponding .scr files:
+
+    set yrange [0:100] # Change values as necessary
+    
+The graphs can be redrawn by then running:
+
+    $ cd figs
+    $ gnuplot bw-gen.gp # or mlp-gen.gp
+    $ cd ..

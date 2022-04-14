@@ -15,7 +15,7 @@ slowdowns=()
 missrates=()
 
 if [[ $1 == 1 ]]; then
-	EnableCAT 1 0x3f 0xfc0 &> /dev/null
+	EnableCAT 1 0x7ff 0x800 &> /dev/null
 else
 	EnableCAT 0 0xffff &> /dev/null
 fi
