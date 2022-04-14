@@ -1,0 +1,31 @@
+set terminal pdf enhanced mono font "Times-Roman,14"
+set output "GTCOS-DoS-BW-LLCMiss.pdf"
+set yrange [0:100]
+set auto x
+set xtics nomirror scale 0
+set xlabel "Victim WSS (KB)"
+set ylabel "LLC Miss Rate (%)" offset 0.5
+#set xtics rotate by -45
+#set key top left Left reverse
+set key outside top center
+set key width 0
+set key maxrows 3
+
+set style data histogram
+set style histogram cluster gap 1.5
+set style fill pattern border
+
+#set arrow from -1,1 to 6,1 nohead dt "-"
+
+set arrow from 2.5,0 to 2.5,100 nohead dt "-"
+
+#set arrow from 0.5,50 to 4.5,50 nohead dt "."
+#set label  "20" at 4.55,53
+#set label  "Hz" at 4.55,45
+
+set boxwidth 1
+plot  "GTCOS-DoS-BW-LLCMiss.dat"  u 2:xticlabel(1) title "Solo",\
+      ""                  using 3 title "BwWrite(DRAM)" lt -1,\
+      ""                  using 4 title "MlpWrite(DRAM)" lt -1,\
+      ""                  using 5 title "MemWrite" lt -1,\
+      ""                  using 6 title "GpuWrite" lt -1
