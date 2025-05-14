@@ -13,7 +13,7 @@ From this directory, run the following commands to initialize the IsolBench suit
 
 Before building the benchmarks, the following file should be copied to the IsolBench/bench directory. This file is a different version of the Memory Aware DoS attack that is tailored specifically for Intel Coffee Lake CPUs.
 
-    $ cp MemAware/attacker4.cpp Isolbench/bench/attacker4.cpp
+    $ cp MemAware/attacker4.cpp IsolBench/bench/attacker4.cpp
     
 Once copied, build and install the necessary IsolBench benchmarks with:
 
